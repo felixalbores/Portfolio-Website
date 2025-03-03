@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scroll Card Animation</title>
+	<style type="style.css"></style>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <script defer src="apps.js"></script>/ -->
+</head>
+
+
+
+
+	<body>
+		<div id="filler"></div>
+		<div id="container">
+			<div id="one"><img src="../photos/church.jpg"></div>	
+			<div id=two><img src="../photos/gym.png"></div>	
+			<div id="three"><img src="../photos/pool.jpg"></div>	
+		</div>
+
+ 
+	<script type="text/javascript">
+
+			window.addEventListener('scroll', function(){
+				let num = window.scrollY / window.innerHeight;
+				let x  = 0;
+				document.getElementById('filler').style.display = "none";
+
+		if(num<=1){
+			document.getElementById('one').style.opacity = 1-num;
+				x = (1-num)*2;
+			document.getElementById('one').style.transform = 'translate3d('+x+'%,'+x+'%,0px) scale(1,1) rotate(-3deg)';
+			} else if (num > 1 && num <= 2){
+				document.getElementById('two').style.opacity = 2 - num;
+				x = (2-num) * 2;
+				document.getElementById('two').style.transform = 'translate3d('+x+'%,-'+x+'%,0px) scale(1,1) rotate(5deg)';
+			} else if (num > 2 && num <= 3){
+				document.getElementById('three').style.opacity = 3-num;
+				x=(3-num)*2;
+				document.getElementById('three').style.transform = 'translate3d('+x+'%,-'+x+'%,0px) scale(1,1) rotate(-15deg)';
+			}else{
+				document.getElementById('filler').style.display = 'block';
+			}
+		})				
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
